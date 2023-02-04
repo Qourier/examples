@@ -26,17 +26,17 @@ contract SumOfNumbers {
         price = price_;
     }
 
-    function createTask() public payable {
+    function createTask(string memory one_, string memory two_) public payable {
         Hub(hub).createTask2{ value: price }(
             bytes32("sum-of-numbers"),
-            [bytes("3"), bytes("4")]
+            [bytes(one_), bytes(two_)]
         );
     }
 
     function completeTask(uint256 id_, bytes memory result_) external {
         require(msg.sender == hub, "Only Qourier can change the state.");
         id = id_;
-        result = bytesToUint(result_); // 3 + 4 = 7
+        result = bytesToUint(result_);
     }
 
     function getTask() public view returns(uint256, uint256) {
@@ -82,17 +82,17 @@ contract TickerSymbol {
         price = price_;
     }
 
-    function createTask() public payable {
+    function createTask(string memory symbol_) public payable {
         Hub(hub).createTask1{ value: price }(
             bytes32("ticker-symbol"),
-            [bytes("FILETH")]
+            [bytes(symbol_)]
         );
     }
 
     function completeTask(uint256 id_, bytes memory result_) external {
         require(msg.sender == hub, "Only Qourier can change the state.");
         id = id_;
-        result = bytesToUint(result_); // 0.00336200 * 10 ** 18 = 3362000000000000
+        result = bytesToUint(result_);
     }
 
     function getTask() public view returns(uint256, uint256) {
