@@ -1,0 +1,24 @@
+{
+  "name": "qourier-module-v0-push-protocol",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "qourier",
+    "qourier-module",
+    "web3",
+    "push",
+    "push-protocol"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@pushprotocol/restapi": "^0.3.2",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.2"
+  }
+}
