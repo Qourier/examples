@@ -41,7 +41,7 @@ contract LighthouseWeb3 {
         Hub(hub).createTask4{ value: price }(
             bytes32("lighthouse-web3"),
             [
-                bytes(msg.sender),
+                bytes(abi.encodePacked(msg.sender)),
                 bytes(minimum_),
                 bytes(maximum_),
                 bytes(cid_)
