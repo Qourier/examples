@@ -31,10 +31,16 @@ const signAuthMessage = async () => {
 //   }
 // };
 
-const lh = async (shareAddress = "", minimum = 0, maximum = 0, cid = "") => {
+const lh = async (
+  shareAddress = "",
+  minimum = "0",
+  maximum = "0",
+  cid = ""
+) => {
   return new Promise(async (resolve, reject) => {
     var randomnumber =
-      Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+      Math.floor(Math.random() * (parseInt(maximum) - parseInt(minimum) + 1)) +
+      parseInt(minimum);
 
     const signedMessage = await signAuthMessage();
     // const fileEncryptionKey = await getfileEncryptionKey(cid);
